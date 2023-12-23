@@ -3,6 +3,34 @@ import "./st.css";
 import Stcard from "./Stcard";
 import { gsap } from "gsap";
 export default function Stories() {
+
+//contents 
+
+
+
+
+let stname = "Rehman";
+let stname1 = "bash";
+let stname2 = "gopal";
+let stname3 = "content";
+
+let address = "gopal";
+let address1 = "gopal";
+let address2 = "gopal";
+let address3 = "gopal";
+
+let para = "very pleased with the photos";
+let para1 = "very pleased with the photos";
+let para2 = "very pleased with the photos";
+let para3 = "very pleased with the photos";
+
+
+let stTitle= "what our users say about us"; 
+
+
+
+//contents
+
     /*useEffect(() => {
    
       
@@ -17,7 +45,10 @@ export default function Stories() {
       
       },[]);
       */
-
+function handleEditoftst(e){
+  stTitle = e.target.innerText;
+ 
+}
       document.addEventListener('wheel', (e) => {
         const scrollContainer = document.getElementById('scroll_container');
         const scrollSpeed = 5; // Adjust the scroll speed factor
@@ -34,15 +65,12 @@ export default function Stories() {
             e.preventDefault();
         }
     });
-    function Editmode(){
 
-    }
   return (<>
       <div className="transistions"><div className="cc"></div><div className="cc"></div><div className="cc"></div><div className="cc"></div><div className="cc"></div></div>
-<button className="editbt" onClick={Editmode}>Edit?</button>
     <div className="stmain">
       <div className="stupperbx">
-        <h2 className="title12">what our users say about us</h2>
+        <h2 className="title12" contentEditable={true} onInput={handleEditoftst}>{stTitle}</h2>
         <div className="leftrightsvgs">
       
           <div className="svglayer">
@@ -73,11 +101,8 @@ export default function Stories() {
         </div>
       </div>
       <div className="cardCor" id="scroll_container" >
-       <Stcard />
-       <Stcard />
-       <Stcard />
-       <Stcard />
-       
+       <Stcard  />
+ 
        
     
       </div>

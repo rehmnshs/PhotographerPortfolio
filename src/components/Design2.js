@@ -11,7 +11,7 @@ import { ScrollTrigger } from "gsap/all";
 import axios from "axios";
 
 export default function Design2() {
-  //STATES
+  //CONTENTS 
   const navigate = useNavigate();
   const [showOverlay, setShowOverlay] = useState(false);
   const [nestpage, setpt] = useState(false);
@@ -21,7 +21,7 @@ export default function Design2() {
   const [logoforserver, setlogoforserver] = useState();
   const [arrayimgsforserver, setarrimfser] = useState([]);
 
-  //STATES
+  //CONTENTS
 
   //Host it! sending data to server
 
@@ -91,7 +91,7 @@ export default function Design2() {
       if (classname === "st") {
         navigate("/stories");
       }
-    }, 2000);
+    }, 1100);
   }
 
   function addborderclass() {
