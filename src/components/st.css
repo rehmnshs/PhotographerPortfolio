@@ -1,0 +1,231 @@
+.stmain {
+  height: 100vh;
+  width: 100%;
+  }
+h2 {
+  margin: 0;
+}
+.stupperbx {
+  height: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+  z-index: 0;
+}
+.title12 {
+  width: 300px;
+  font-size: 4vh;
+}
+.leftrightsvgs {
+  display: flex;
+  gap: 2vh;
+}
+.svglayer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10vh;
+  background-color: RGB(239, 239, 224);
+  width: 34px;
+  height: 34px;
+}
+.svglayer:hover {
+  background-color: RGB(227, 228, 208);
+}
+.svglayer:hover > svg {
+  fill: #7a715c;
+}
+
+/* CARD layout */
+.cardCor {
+  height: 60%;
+  width:100%;
+  display: flex;
+justify-content: center;
+
+  -webkit-overflow-scrolling: touch;
+  gap: 3vh;
+  overflow: hidden;
+
+  scroll-behavior: smooth;
+}
+
+.card {
+  margin-top: 10px;
+  height: 70%;
+
+  min-width: 300px;
+  border: RGB(239, 239, 240) solid 2px;
+  border-radius: 2vh;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+.card:hover {
+  transform: scale(1.05);
+  z-index: 100;
+}
+.innercard {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+
+  height: 100%;
+  width: 100%;
+}
+/*innercard layouts*/
+.infocard {
+  height: 70px;
+  width: 100%;
+}
+.ratecard {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 4vh;
+  gap: 10px;
+}
+.ratecard > svg {
+}
+.paracard {
+  height: 50%;
+  width: 80%;
+  display: flex;
+  padding-left: 4vh;
+  padding-right: 4vh;
+}
+/* inner information layouts */
+.pfpcard {
+  height: 30px;
+  width: 30px;
+  border-radius: 2vh;
+  background-color: #7a715c;
+}
+.infoinnercard {
+  display: flex;
+  align-items: center;
+
+  gap: 1.1vh;
+}
+.cardname {
+  font-weight: bold;
+  font-weight: 630;
+}
+.address {
+  opacity: 0.8;
+}
+.infocard {
+  display: flex;
+  padding-left: 4vh;
+}
+p {
+  font-family: "Open Sans", sans-serif;
+  font-size: 110%;
+  height: 100%;
+  width: 100%;
+}
+.btrbt{
+  position: relative;
+  background-color:RGB(242,242,242);
+
+border: black solid 2px;
+  height: 50px;
+  width: 125px;
+  z-index: 1;
+  transition: all 0.2s;
+}
+.btrbt:after{
+  content: '';
+  background: black;
+  position: absolute;
+  top: 50%; /* Start from the middle vertically */
+  left: 50%; /* Start from the middle horizontally */
+  transform: translate(-50%, -50%);
+  height: 100%;
+  width:  0%;
+
+
+/* transform: translateY(100%); */
+  transition: all 0.5s;
+  z-index: 0;
+  
+}
+.btrbt:hover::after{
+  content: '';
+
+ 
+  width: 101%; /* Adjust the final width as needed */
+  height: 100%; /* Adjust the final height as needed */
+
+
+}
+.btrbt:hover > .plus{
+ fill: white;
+ z-index: 1;
+
+}
+.plus{
+  margin-left: 5px;
+  transition: all 0.5s;
+}
+.plus:hover{
+  rotate: 45deg;
+}
+.btrbt{
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+@keyframes transsis {
+  0%{
+    height: 100%;
+ z-index: 1;
+  }
+  100%{
+    height: 0;
+ z-index: 0;
+  }
+}
+.transistions{
+  position: fixed;
+  
+bottom: 0;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: space-around;
+  
+  z-index: 1;
+  animation: transsis 0.5s  1s both;
+
+}
+.cc{
+  
+  display: flex;
+
+
+
+  background-color: black;
+  height: 10%;
+  width: 100%;
+animation: transsis 0.5s  0.5s both;
+  
+
+ 
+}
+.transistions > div:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.transistions > div:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.transistions > div:nth-child(4) {
+  animation-delay: 0.2s;
+}
+
+.transistions > div:nth-child(5) {
+  animation-delay: 0.1s;
+}
