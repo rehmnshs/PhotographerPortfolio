@@ -1,33 +1,7 @@
 import React, { useState } from 'react'
 
 export default function Stcard() {
-  const [isEditing, setIsEditing] = useState(false);
-  const [isEditing1, setIsEditing1] = useState(false);
-  const [isEditing2, setIsEditing2] = useState(false);
 
-  const [name ,setname ] = useState("");
-  const [name1 ,setname1 ] = useState("");
-  const [name2 ,setname2 ] = useState("");
-  document.addEventListener('click', (e) => {
-  
-    if (e.target.closest('.stupperbx')) {
-      setIsEditing(false);
-    }
-  
-  })
-  const handleDoubleClick = () => {
-    setIsEditing( true);
-
-  };
-const handleNameChange =(event)=>{
-  setname(event.target.value)
-}
-const handleNameChange1 =(event)=>{
-  setname1(event.target.value)
-}
-const handleNameChange2 =(event)=>{
-  setname2(event.target.value)
-}
     return (
     <div className="card">
     <div className="innercard">
@@ -35,8 +9,8 @@ const handleNameChange2 =(event)=>{
         <div className="infoinnercard">
           <div className="pfpcard"></div>
           <div className="infonopfp">
-            <div className="cardname" onClick={handleDoubleClick}>{isEditing ? <input onChange={handleNameChange } value={name} type='text'/> : <div>{name}</div> }</div>
-            <div className="address"  onClick={handleDoubleClick}>{isEditing ? <input onChange={handleNameChange1 } value={name1} type='text'/> : <div>{name1}</div>}</div>
+            <div className="cardname" >Rehman sha</div>
+            <div className="address">   <div>uk</div></div>
           </div>
         </div>
       </div>
@@ -98,10 +72,7 @@ const handleNameChange2 =(event)=>{
         </svg>
       </div>
       <div className="paracard" >
-      {isEditing ? <input onChange={handleNameChange2 } value={name2} type='text'/> : <p  onClick={handleDoubleClick} >
-        
-         {name2}
-        </p>}
+     <p>adawdaw</p>
       </div>
     </div>
   </div>

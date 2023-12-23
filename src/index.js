@@ -9,7 +9,7 @@ import Contactd2 from './components/Contactd2';
 import Stories from './components/Stories';
 
 
-import Header from './components/Header';
+
 
 const router = createBrowserRouter([
   {
@@ -23,9 +23,6 @@ const router = createBrowserRouter([
   {
     path: "/stories",
     element: <Stories />,
-  },{
-    path:"/header",
-    element: <Header />
   }
 
 

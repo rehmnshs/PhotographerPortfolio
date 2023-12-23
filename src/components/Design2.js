@@ -15,8 +15,8 @@ export default function Design2() {
   const [nestpage, setpt] = useState(false);
   const [logoImg, setLogoImg] = useState(img5);
   const [ptt, setptt] = useState("fi");
-  const arrayimgs = [];
-  const [isClickedlogo1, setIsClickedlogo1] = useState(false);
+
+
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -77,79 +77,6 @@ export default function Design2() {
     }, 2000);
   }
 
-  function addborderclass() {
-    var fileInput = document.createElement("input");
-    fileInput.type = "file";
-    fileInput.accept = "image/";
-    fileInput.id = "dynamicFileInput";
-    fileInput.maxLength="1048576";
-    fileInput.style.display = "none";
-
-    document.body.appendChild(fileInput);
-
-    fileInput.addEventListener("change", function () {
-      handleFileUpload(fileInput, setLogoImg);
-      document.body.removeChild(fileInput);
-    });
-
-    fileInput.click();
-  }
-  function handleFileUpload(input, setstate) {
-    if (input.files.length == 1) {
-      return setLogoImg(URL.createObjectURL(input.files[0]));
-    }
-
-    if (input.files.length > 1) {
-      let i = 0;
-      for (let i = 0; i < input.files.length; i++) {
-        var img = document.createElement(`img`);
-        img.className = "im";
-        img.src = URL.createObjectURL(input.files[i]);
-        arrayimgs.push(img);
-      }
-      console.log(arrayimgs);
-      var imgcontainerdiv = document.querySelector(".ibox2");
-      for (let i = 0; i < arrayimgs.length; i++) {
-        imgcontainerdiv.appendChild(arrayimgs[i]);
-      }
-    }
-  }
-  function setlayouthero() {
-    // Get the parent div
-    var ibox2 = document.querySelector(".ibox2");
-    setIsClickedlogo1(true);
-
-    // Remove all child elements
-    while (ibox2.firstChild) {
-      ibox2.removeChild(ibox2.firstChild);
-    }
-    var fileInput = document.createElement("input");
-    fileInput.type = "file";
-    fileInput.id = "dynamicFileInput";
-    fileInput.style.display = "none";
-    fileInput.size="576";
-    fileInput.multiple = true;
-
-    document.body.appendChild(fileInput);
-
-    fileInput.addEventListener("change", function () {
-      handleFileUpload(fileInput, setLogoImg);
-      document.body.removeChild(fileInput);
-    });
-
-    fileInput.click();
-  }
-
-  const Editmode = () => {
-    const imgbox = document.querySelector(".ibox2");
-    const logo = document.querySelector(".logo");
-
-    logo.addEventListener("click", addborderclass);
-    imgbox.addEventListener("click", setlayouthero);
-  };
-  function finishmode(){
-
-  }
 
   return (
     <div>
@@ -183,7 +110,7 @@ export default function Design2() {
           </div>
 
           <div className="port">
-            Portfolio <div className="underline"></div>
+            TEMPLATE THIS IS  <div className="underline"></div>
           </div>
           <div className="st" onClick={confunc}>
             Stories<div className="underline"></div>
@@ -218,12 +145,7 @@ export default function Design2() {
             </div>
           </div>
         </div>
-        <button className="editbt" onClick={Editmode}>
-          Edit?
-        </button>
-        <button className="editbtt" onClick={finishmode}>
-          finish?
-        </button>
+
         <div className="ibox2">
           <img className="im" src={img1} onClick={openim} id="img1" />
           <img className="im" src={img} onClick={openim} />

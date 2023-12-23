@@ -34,12 +34,9 @@ export default function Stories() {
             e.preventDefault();
         }
     });
-    function Editmode(){
-
-    }
+   
   return (<>
       <div className="transistions"><div className="cc"></div><div className="cc"></div><div className="cc"></div><div className="cc"></div><div className="cc"></div></div>
-<button className="editbt" onClick={Editmode}>Edit?</button>
     <div className="stmain">
       <div className="stupperbx">
         <h2 className="title12">what our users say about us</h2>
