@@ -74,7 +74,7 @@ export default function Design2() {
       if (classname === "st") {
         navigate("/stories");
       }
-    }, 2000);
+    }, 1200);
   }
 
 
