@@ -8,19 +8,36 @@ import Lenis from "@studio-freight/lenis";
 import { gsap } from "gsap";
 import { useNavigate } from "react-router-dom";
 import { ScrollTrigger } from "gsap/all";
+import axios from "axios";
 
 export default function Design2() {
+  //STATES
   const navigate = useNavigate();
   const [showOverlay, setShowOverlay] = useState(false);
   const [nestpage, setpt] = useState(false);
   const [logoImg, setLogoImg] = useState(img5);
   const [ptt, setptt] = useState("fi");
   const arrayimgs = [];
-  const [isClickedlogo1, setIsClickedlogo1] = useState(false);
+  const [logoforserver, setlogoforserver] = useState();
+  const [arrayimgsforserver, setarrimfser] = useState([]);
+
+  //STATES
+
+  //Host it! sending data to server
+
+  const finishmode = async () => {
+    const resp = await axios.post("http://localhost:5001/storeDis", {
+      logo: logoforserver,
+      displayimgs: arrayimgsforserver,
+    });
+    console.log("sent to the server",resp.data);
+    
+  };
+
+  //end of Host it!
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-
     const images = document.querySelectorAll(".im");
 
     const tl = gsap.timeline();
@@ -49,7 +66,7 @@ export default function Design2() {
   const lenis = new Lenis();
 
   lenis.on("scroll", (e) => {
-    console.log(e);
+    console.log();
   });
 
   function raf(time) {
@@ -82,7 +99,7 @@ export default function Design2() {
     fileInput.type = "file";
     fileInput.accept = "image/";
     fileInput.id = "dynamicFileInput";
-    fileInput.maxLength="1048576";
+    fileInput.maxLength = "1048576";
     fileInput.style.display = "none";
 
     document.body.appendChild(fileInput);
@@ -96,6 +113,9 @@ export default function Design2() {
   }
   function handleFileUpload(input, setstate) {
     if (input.files.length == 1) {
+      setlogoforserver("");
+      setlogoforserver(input.files[0]);
+      console.log(logoforserver);
       return setLogoImg(URL.createObjectURL(input.files[0]));
     }
 
@@ -104,10 +124,14 @@ export default function Design2() {
       for (let i = 0; i < input.files.length; i++) {
         var img = document.createElement(`img`);
         img.className = "im";
+        setarrimfser(arrayimgsforserver.push(input.files[i]));
+
         img.src = URL.createObjectURL(input.files[i]);
+
         arrayimgs.push(img);
       }
-      console.log(arrayimgs);
+      console.log(arrayimgsforserver);
+
       var imgcontainerdiv = document.querySelector(".ibox2");
       for (let i = 0; i < arrayimgs.length; i++) {
         imgcontainerdiv.appendChild(arrayimgs[i]);
@@ -117,7 +141,6 @@ export default function Design2() {
   function setlayouthero() {
     // Get the parent div
     var ibox2 = document.querySelector(".ibox2");
-    setIsClickedlogo1(true);
 
     // Remove all child elements
     while (ibox2.firstChild) {
@@ -127,7 +150,7 @@ export default function Design2() {
     fileInput.type = "file";
     fileInput.id = "dynamicFileInput";
     fileInput.style.display = "none";
-    fileInput.size="576";
+    fileInput.size = "576";
     fileInput.multiple = true;
 
     document.body.appendChild(fileInput);
@@ -138,17 +161,6 @@ export default function Design2() {
     });
 
     fileInput.click();
-  }
-
-  const Editmode = () => {
-    const imgbox = document.querySelector(".ibox2");
-    const logo = document.querySelector(".logo");
-
-    logo.addEventListener("click", addborderclass);
-    imgbox.addEventListener("click", setlayouthero);
-  };
-  function finishmode(){
-
   }
 
   return (
@@ -178,7 +190,7 @@ export default function Design2() {
       )}
       <div className="dbox" id="ddd">
         <div className="ibh">
-          <div className="logo">
+          <div className="logo" onClick={addborderclass}>
             <img src={logoImg} />
           </div>
 
@@ -190,6 +202,9 @@ export default function Design2() {
           </div>
           <div className="con" onClick={confunc}>
             Contact<div className="underline"></div>
+          </div>
+          <div className="con" onClick={finishmode}>
+            Host it!<div className="underline"></div>
           </div>
           <div style={{ display: "flex", gap: "20px", marginTop: "25px" }}>
             <div>
@@ -218,13 +233,8 @@ export default function Design2() {
             </div>
           </div>
         </div>
-        <button className="editbt" onClick={Editmode}>
-          Edit?
-        </button>
-        <button className="editbtt" onClick={finishmode}>
-          finish?
-        </button>
-        <div className="ibox2">
+
+        <div className="ibox2" onClick={setlayouthero}>
           <img className="im" src={img1} onClick={openim} id="img1" />
           <img className="im" src={img} onClick={openim} />
           <img className="im" src={img7} onClick={openim} id="img" />
