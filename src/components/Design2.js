@@ -26,12 +26,12 @@ export default function Design2() {
   //Host it! sending data to server
 
   const finishmode = async () => {
-    const resp = await axios.post("http://localhost:5001/storeDis", {
+    const resp = await axios.post("http://localhost:5000/storeDis", {
       logo: logoforserver,
       displayimgs: arrayimgsforserver,
     });
     console.log("sent to the server",resp.data);
-    
+
   };
 
   //end of Host it!
