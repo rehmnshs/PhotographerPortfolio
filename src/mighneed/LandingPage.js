@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './lp.css'
+import '../css/lp.css'
 export default function LandingPage() {
     const [toggle, setToggle] = useState(false);
     function toggledivs() {

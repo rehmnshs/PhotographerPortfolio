@@ -1,12 +1,11 @@
 import { useState } from "react";
 import "./App.css";
-import LandingPage from "./components/LandingPage";
 
 import Design2 from "./components/Design2";
 
-function App() {
+function App({arrayimgs, setarrayimgs, logo, setLogo, email,insta}) {
   return (
-<><Design2 /></>
+<><Design2 setarrayimgs={setarrayimgs} arrayimgs={arrayimgs} logo={logo} setLogo={setLogo} email={email} insta={insta}/></>
   );
 }
 

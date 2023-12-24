@@ -1,0 +1,83 @@
+.conmainbox {
+  height: 90vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.coninnebox {
+  position: relative;
+  margin-top: 100px;
+  font-size: 50px;
+  width: 50%;
+  height: 2000px;
+  border: white;
+  font-family: sans-serif;
+  font-weight: 600;
+}
+.condetes {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  margin-top: 100px;
+}
+.parainput {
+  height: ;
+}
+@keyframes transsis {
+    0%{
+      height: 100%;
+   
+    }
+    100%{
+      height: 0%;
+   
+    }}
+    .transistions{
+        position: fixed;
+        
+      bottom: 0;
+        display: flex;
+        height: 100%;
+        width: 100%;
+        justify-content: space-around;
+        align-items: flex-end; 
+        z-index: 1;
+      
+      }
+      .cc{
+        
+        display: flex;
+      
+      
+      
+        background-color: black;
+        height: 10%;
+        width: 100%;
+      animation: transsis 0.5s both;
+        
+      
+       
+      }
+      .transistions > div:nth-child(1) {
+        animation-delay: 0.5s;
+      }
+      
+      .transistions > div:nth-child(2) {
+        animation-delay: 0.4s;
+      }
+      
+      .transistions > div:nth-child(3) {
+        animation-delay: 0.3s;
+      }
+      .transistions > div:nth-child(4) {
+        animation-delay: 0.2s;
+      }
+      
+      .transistiosns > div:nth-child(5) {
+        animation-delay: 0.1s;
+      }
+      
+      

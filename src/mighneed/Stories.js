@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "./st.css";
+import "../css/st.css";
 import Stcard from "./Stcard";
 import { gsap } from "gsap";
 export default function Stories() {
