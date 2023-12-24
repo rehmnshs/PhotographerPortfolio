@@ -10,6 +10,10 @@ flex-direction: column;
 margin-top: 100px;
     font-size: 50px;
     width: 50%;
+    height: 2000px;
+    border: white ;
+    font-family: sans-serif;
+    font-weight: 600;
     
 }
 .condetes{
@@ -21,5 +25,5 @@ margin-top: 100px;
     margin-top: 100px;
 }
 .parainput{
-    height: 100%;
+    height: ;
 }

@@ -1,63 +1,40 @@
 import React, { useState } from 'react'
 
-export default function Stcard() {
+export default function Stcard({stname,setStname}) {
 //contents
 
-let stname = "Rehman";
-let stname1 = "bash";
-let stname2 = "gopal";
-let stname3 = "content";
 
-let address = "Chennai";
-let address1 = "Chennai";
-let address2 = "Chennai";
-let address3 = "Chennai";
+const [stname1, setStname1] = useState("bash");
+const [stname2, setStname2] = useState("gopal");
+const [stname3, setStname3] = useState("content");
 
-let para = "very pleased with the photos";
-let para1 = "very pleased with the photos";
-let para2 = "very pleased with the photos";
-let para3 = "very pleased with the photos";
+const [address, setAddress] = useState("Chennai");
+const [address1, setAddress1] = useState("Chennai");
+const [address2, setAddress2] = useState("Chennai");
+const [address3, setAddress3] = useState("Chennai");
 
+const [para, setPara] = useState("very pleased with the photos");
+const [para1, setPara1] = useState("very pleased with the photos");
+const [para2, setPara2] = useState("very pleased with the photos");
+const [para3, setPara3] = useState("very pleased with the photos");
 
- 
-//contents
-const handleNameChange =(event)=>{
- stname = event.target.innerText;
-}
-const handleNameChange01 =(event)=>{
-  stname1 = event.target.innerText;
- }
- const handleNameChange02 =(event)=>{
-  stname2 = event.target.innerText;
- }
- const handleNameChange03 =(event)=>{
-  stname3 = event.target.innerText;
- }
-const handleNameChange1 =(event)=>{
-  address = event.target.innerText;
-}
-const handleNameChange12 =(event)=>{
-  address1 = event.target.innerText;
- }
- const handleNameChange13 =(event)=>{
-  address2 = event.target.innerText;
- }
- const handleNameChange14 =(event)=>{
-  address3 = event.target.innerText;
- }
-const handleNameChange2 =(event)=>{
-  para = event.target.innerText;
-}
-const handleNameChange21 =(event)=>{
-  para1 = event.target.innerText;
-}
-const handleNameChange22 =(event)=>{
-  para2 = event.target.innerText;
-}
-const handleNameChange23 =(event)=>{
-  para3 = event.target.innerText;
+// Name Change Handlers
+const handleNameChange = (event) => setStname(event.target.innerText);
+const handleNameChange01 = (event) => setStname1(event.target.innerText);
+const handleNameChange02 = (event) => setStname2(event.target.innerText);
+const handleNameChange03 = (event) => setStname3(event.target.innerText);
 
-}
+// Address Change Handlers
+const handleNameChange1 = (event) => setAddress(event.target.innerText);
+const handleNameChange12 = (event) => setAddress1(event.target.innerText);
+const handleNameChange13 = (event) => setAddress2(event.target.innerText);
+const handleNameChange14 = (event) => setAddress3(event.target.innerText);
+
+// Para Change Handlers
+const handleNameChange2 = (event) => setPara(event.target.innerText);
+const handleNameChange21 = (event) => setPara1(event.target.innerText);
+const handleNameChange22 = (event) => setPara2(event.target.innerText);
+const handleNameChange23 = (event) => setPara3(event.target.innerText);
 
     return (
       <>
@@ -67,8 +44,8 @@ const handleNameChange23 =(event)=>{
         <div className="infoinnercard">
           <div className="pfpcard"></div>
           <div className="infonopfp">
-            <div className="cardname" contentEditable={true} onInput={handleNameChange}>{stname}</div>
-            <div className="address"  contentEditable={true} onInput={handleNameChange1}>{address}</div>
+            <textarea className="cardname" onChange={handleNameChange}>{stname}</textarea>
+            <textarea className="address"  onChange={handleNameChange1}>{address}</textarea>
           </div>
         </div>
       </div>
@@ -215,7 +192,7 @@ const handleNameChange23 =(event)=>{
         <div className="infoinnercard">
           <div className="pfpcard"></div>
           <div className="infonopfp">
-            <div className="cardname" contentEditable={true} onInput={handleNameChange03}>{stname2}</div>
+            <div className="cardname" contentEditable={true} onInput={handleNameChange02}>{stname2}</div>
             <div className="address"  contentEditable={true} onInput={handleNameChange13}>{address2}</div>
           </div>
         </div>

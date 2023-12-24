@@ -1,28 +1,13 @@
 import React, { useEffect } from "react";
-import "./st.css";
+import "../css/st.css";
 import Stcard from "./Stcard";
 import { gsap } from "gsap";
-export default function Stories() {
+export default function Stories({stname,setStname}) {
 
 //contents 
 
 
 
-
-let stname = "Rehman";
-let stname1 = "bash";
-let stname2 = "gopal";
-let stname3 = "content";
-
-let address = "gopal";
-let address1 = "gopal";
-let address2 = "gopal";
-let address3 = "gopal";
-
-let para = "very pleased with the photos";
-let para1 = "very pleased with the photos";
-let para2 = "very pleased with the photos";
-let para3 = "very pleased with the photos";
 
 
 let stTitle= "what our users say about us"; 
@@ -101,7 +86,7 @@ function handleEditoftst(e){
         </div>
       </div>
       <div className="cardCor" id="scroll_container" >
-       <Stcard  />
+       <Stcard  stname={stname} setStname={setStname}/>
  
        
     

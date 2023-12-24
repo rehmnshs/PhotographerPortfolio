@@ -1,37 +1,59 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
+import React, { useState } from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import img5 from ".././src/assets/img5.png";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Contactd2 from "./components/Contactd2";
+import Stories from "./meh/Stories";
+import Header from "./meh/Header";
+
+const Index = () => {
+  //contents of all pages
+  const insta = "https://9animehq.to/home";
+  const email = "mailto:"+"rehmnshs@gmail.com";
+
+  const [para, setpara] = useState(
+    "Hi I’m Daniel Aristizábal, but call me Dani. I work as an art director " +
+      "and digital artist working across the fields of arts, fashion and " +
+      "entertainment, bringing forward new technologies to create stunning " +
+      "and inspiring artworks"
+  );
+
+  const [logo, setLogo] = useState();
+  const [arrayimgs, setarrayimgs] = useState([]);
 
 
-import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
-import Contactd2 from './components/Contactd2';
-import Stories from './components/Stories';
+  //contents of all pages
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: (
+        <App
+          arrayimgs={arrayimgs}
+          setarrayimgs={setarrayimgs}
+          logo={logo}
+          setLogo={setLogo}
+          email={email}
+          insta={insta}
+        />
+      ),
+    },
+    {
+      path: "/info",
+      element: <Contactd2 para={para} setpara={setpara} insta={insta} email={email} />,
+    },
 
+    {
+      path: "/header",
+      element: <Header />,
+    },
+  ]);
 
-import Header from './components/Header';
+  const el = document.getElementById("root");
+  const root = ReactDOM.createRoot(el);
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-  },
-  {
-    path: "/info",
-    element: <Contactd2 />,
-  },
-  {
-    path: "/stories",
-    element: <Stories />,
-  },{
-    path:"/header",
-    element: <Header />
-  }
+  return <RouterProvider router={router} />;
+};
 
-
-]);
-
-const el = document.getElementById("root");
-const root = ReactDOM.createRoot(el);
-
-root.render(<RouterProvider router={router} />);
+ReactDOM.render(<Index />, document.getElementById("root"));
