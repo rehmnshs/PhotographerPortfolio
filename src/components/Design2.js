@@ -1,13 +1,26 @@
 import React, { useEffect, useState } from "react";
-import img from "../assets/img2.jpg";
-import img1 from "../assets/img4.jpg";
-import img5 from "../assets/img6.png";
-import img7 from "../assets/img7.jpg";
+// import pic1 from "../assets/pic1.png";
+// import pic2 from "../assets/pic2.png";
+// import pic3 from "../assets/pic3.png";
+// import pic4 from "../assets/pic4.png";
+// import pic5 from "../assets/pic5.png";
+// import pic6 from "../assets/pic6.png";
+// import pic7 from "../assets/pic7.png";
+// import pic8 from "../assets/pic8.png";
+// import pic9 from "../assets/pic9.png";
+// import pic10 from "../assets/pic10.png";
+// import pic11 from "../assets/pic11.png";
+// import pic12 from "../assets/pic12.png";
+// import pic13 from "../assets/pic13.png";
+// import pic14 from "../assets/pic14.png";
+// import pic15 from "../assets/pic15.png";
+// import pic16 from "../assets/pic16.png";
 import "../css/d2c.css";
 import Lenis from "@studio-freight/lenis";
 import { gsap } from "gsap";
 import { useNavigate } from "react-router-dom";
 import { ScrollTrigger } from "gsap/all";
+import axios from "axios";
 
 export default function Design2({
   arrayimgs,
@@ -16,11 +29,31 @@ export default function Design2({
   setLogo,
   email,
   insta,
+  pic1Source,
+  pic2Source,
+  pic3Source,
+  pic4Source,
+  pic5Source,
+  pic6Source,
+  pic7Source,
+  pic8Source,
+  pic9Source,
+  pic10Source,
+  pic11Source,
+  pic12Source,
+  pic13Source,
+  pic14Source,
+  pic15Source,
+  pic16Source,
 }) {
-  const [defaultImages, setdef] = useState([img1, img, img7, img, img1]);
+  // const [defaultImages, setdef] = useState([img1, img, img7]);
   const [showOverlay, setShowOverlay] = useState(false);
   const navigate = useNavigate();
   const [nestpage, setpt] = useState(false);
+  const [curImage , setCurImage] = useState(null);
+  //CONTENTS
+
+  //CONTENTS
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -36,14 +69,13 @@ export default function Design2({
           opacity: 1,
           duration: 0.09,
           y: 0,
+
+          // Adjust the stagger effect
         }
       );
     });
   }, []);
 
-  function openim() {
-    setShowOverlay(true);
-  }
   const handlePopupClose = () => {
     setShowOverlay(false);
   };
@@ -68,6 +100,7 @@ export default function Design2({
     ele.classList.add("dbox1");
     setpt(true);
     setTimeout(function () {
+      // Redirect to '/info'
       if (classname === "con") {
         navigate("/info");
       }
@@ -76,6 +109,9 @@ export default function Design2({
       }
     }, 1100);
   }
+
+
+  
 
   return (
     <>
@@ -90,8 +126,9 @@ export default function Design2({
           </div>
           <div className="containeroimg">
             <div className="curtain"></div>
-            <img className="imgg" src={img7} />
+            <img className="imgg" src={curImage} />
           </div>
+        
         </div>
       )}
       <div>
@@ -107,8 +144,10 @@ export default function Design2({
 
         <div className="dbox" id="ddd">
           <div className="ibh">
-            <div className="logo">
-              <img src={logo ? logo : img5} />
+            <div className="logo" 
+            
+            >
+              <img src={pic1Source} alt=""/>
             </div>
 
             <div className="port">
@@ -118,13 +157,11 @@ export default function Design2({
             <div className="con" onClick={confunc}>
               Contact<div className="underline"></div>
             </div>
-            <div className="con">
-              Host it!<div className="underline"></div>
-            </div>
+            
             <div style={{ display: "flex", gap: "20px", marginTop: "25px" }}>
               <div>
                 <a
-                  href={insta}
+                 href={insta}
                   style={{ textDecoration: "none", color: "black" }}
                 >
                   <svg
@@ -141,7 +178,7 @@ export default function Design2({
               </div>
               <div>
                 <a
-                  href={email}
+                 href={email}
                   style={{ textDecoration: "none", color: "black" }}
                 >
                   <svg
@@ -159,25 +196,37 @@ export default function Design2({
             </div>
           </div>
 
-          <div className="ibox2">
-            {arrayimgs[0]
-              ? arrayimgs.map((imgSrc, index) => (
-                  <img
-                    key={`img_${index}`}
-                    className="im"
-                    onClick={openim}
-                    src={imgSrc}
-                  />
-                ))
-              : defaultImages.map((imgSrc, index) => (
-                  <img
-                    key={`default_img_${index}`}
-                    className="im"
-                    src={imgSrc}
-                    onClick={openim}
-                    alt={`Default Image ${index}`}
-                  />
-                ))}
+          <div className="ibox2" >
+          <img src={pic2Source} alt="" className="im" onClick={() => { setShowOverlay(true)
+          setCurImage(pic2Source) } }/>
+          <img src={pic3Source} alt="" className="im" onClick={() => { setShowOverlay(true)
+          setCurImage(pic3Source) } }/>
+          <img src={pic4Source} alt="" className="im" onClick={() => { setShowOverlay(true)
+          setCurImage(pic4Source) } }/>
+          <img src={pic5Source} alt="" className="im" onClick={() => { setShowOverlay(true)
+          setCurImage(pic5Source) } }/>
+          <img src={pic6Source} alt="" className="im" onClick={() => { setShowOverlay(true)
+          setCurImage(pic6Source) } }/>
+          <img src={pic7Source} alt="" className="im" onClick={() => { setShowOverlay(true)
+          setCurImage(pic7Source) } }/>
+          <img src={pic8Source} alt="" className="im" onClick={() => { setShowOverlay(true)
+          setCurImage(pic8Source) } }/>
+          <img src={pic9Source} alt="" className="im" onClick={() => { setShowOverlay(true)
+          setCurImage(pic9Source) } }/>
+          <img src={pic10Source} alt="" className="im" onClick={() => { setShowOverlay(true)
+          setCurImage(pic10Source) } }/>
+          <img src={pic11Source} alt="" className="im" onClick={() => { setShowOverlay(true)
+          setCurImage(pic11Source) } }/>
+          <img src={pic12Source} alt="" className="im" onClick={() => { setShowOverlay(true)
+          setCurImage(pic12Source) } }/>
+          <img src={pic13Source} alt="" className="im" onClick={() => { setShowOverlay(true)
+          setCurImage(pic13Source) } }/>
+          <img src={pic14Source} alt="" className="im" onClick={() => { setShowOverlay(true)
+          setCurImage(pic14Source) } }/>
+          <img src={pic15Source} alt="" className="im" onClick={() => { setShowOverlay(true)
+          setCurImage(pic15Source) } }/>
+          <img src={pic16Source} alt="" className="im" onClick={() => { setShowOverlay(true)
+          setCurImage(pic16Source) } }/>
           </div>
         </div>
       </div>
