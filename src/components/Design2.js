@@ -1,8 +1,20 @@
 import React, { useEffect, useState } from "react";
-import img from "../assets/img2.jpg";
-import img1 from "../assets/img4.jpg";
-import img5 from "../assets/img6.png";
-import img7 from "../assets/img7.jpg";
+// import pic1 from "../assets/pic1.png";
+// import pic2 from "../assets/pic2.png";
+// import pic3 from "../assets/pic3.png";
+// import pic4 from "../assets/pic4.png";
+// import pic5 from "../assets/pic5.png";
+// import pic6 from "../assets/pic6.png";
+// import pic7 from "../assets/pic7.png";
+// import pic8 from "../assets/pic8.png";
+// import pic9 from "../assets/pic9.png";
+// import pic10 from "../assets/pic10.png";
+// import pic11 from "../assets/pic11.png";
+// import pic12 from "../assets/pic12.png";
+// import pic13 from "../assets/pic13.png";
+// import pic14 from "../assets/pic14.png";
+// import pic15 from "../assets/pic15.png";
+// import pic16 from "../assets/pic16.png";
 import "../css/d2c.css";
 import Lenis from "@studio-freight/lenis";
 import { gsap } from "gsap";
@@ -19,40 +31,40 @@ export default function Design2({
   insta,
   setEmail,
   setInsta,
-  pic1,
-  pic2,
-  pic3,
-  pic4,
-  pic5,
-  pic6,
-  pic7,
-  pic8,
-  pic9,
-  pic10,
-  pic11,
-  pic12,
-  pic13,
-  pic14,
-  pic15,
-  pic16,
-  setpic1,
-  setpic2,
-  setpic3,
-  setpic4,
-  setpic5,
-  setpic6,
-  setpic7,
-  setpic8,
-  setpic9,
-  setpic10,
-  setpic11,
-  setpic12,
-  setpic13,
-  setpic14,
-  setpic15,
-  setpic16,
+  pic1Source,
+  pic2Source,
+  pic3Source,
+  pic4Source,
+  pic5Source,
+  pic6Source,
+  pic7Source,
+  pic8Source,
+  pic9Source,
+  pic10Source,
+  pic11Source,
+  pic12Source,
+  pic13Source,
+  pic14Source,
+  pic15Source,
+  pic16Source,
+  setpic1Source,
+  setpic2Source,
+  setpic3Source,
+  setpic4Source,
+  setpic5Source,
+  setpic6Source,
+  setpic7Source,
+  setpic8Source,
+  setpic9Source,
+  setpic10Source,
+  setpic11Source,
+  setpic12Source,
+  setpic13Source,
+  setpic14Source,
+  setpic15Source,
+  setpic16Source,
 }) {
-  const [defaultImages, setdef] = useState([img1, img, img7]);
+  // const [defaultImages, setdef] = useState([img1, img, img7]);
   const [showOverlay, setShowOverlay] = useState(false);
   const navigate = useNavigate();
   const [nestpage, setpt] = useState(false);
@@ -83,9 +95,6 @@ export default function Design2({
     });
   }, []);
 
-  function openim() {
-    setShowOverlay(true);
-  }
   const handlePopupClose = () => {
     setShowOverlay(false);
     setInstaInput(false);
@@ -122,67 +131,29 @@ export default function Design2({
     }, 1100);
   }
 
-  const newImages = [];
-  let k = "setpic";
-  function handleFileUpload(input) {
-    if (!pic1) {
-      const img = document.createElement("img");
-
-      setpic1(input.files[0]);
-      img.className= "im";
-      img.src =URL.createObjectURL(pic1);
-      const main = document.querySelector(".ibox2");
-     return main.appendChild(img);
-    }
-    if (!pic2) {
-      const img = document.createElement("img");
-
-      setpic2(input.files[0]);
-      img.className = "im";
-      img.src =URL.createObjectURL(pic2);
-      const main = document.querySelector(".ibox2");
-      return main.appendChild(img);
-    }
-    if (!pic3) {
-      setpic3(input.files[0]);
-      console.log(pic3);
-    }
-
-    /*  for (let i = 0; i < input.files.length; i++) {
-      
-      newImages.push(input.files[i]);
-    }
-
-    setarrayimgs((prevImages) => [...prevImages, ...newImages]);
-  }*/
-  }
-  function handleLogoUpload(input) {
-    return setLogo(input.files[0]);
-  }
-  function setlayouthero(classname) {
-    var ibox2 = document.querySelector(".ibox2");
-
+  function addInput(setImageSource) {
     var fileInput = document.createElement("input");
     fileInput.type = "file";
+    fileInput.accept = "image/";
     fileInput.id = "dynamicFileInput";
     fileInput.style.display = "none";
-    fileInput.size = "576";
-    fileInput.multiple = true;
 
     document.body.appendChild(fileInput);
 
-    fileInput.addEventListener("change", function () {
-      if (classname == "logo") {
-        handleLogoUpload(fileInput);
-        document.body.removeChild(fileInput);
-      } else {
-        handleFileUpload(fileInput);
-        document.body.removeChild(fileInput);
-      }
+    fileInput.addEventListener("change", function (e) {
+      handleImageChange(e, setImageSource);
+      document.body.removeChild(fileInput);
     });
 
     fileInput.click();
   }
+  const handleImageChange = (e, setImage) => {
+    const file = e.target.files[0];
+    if (file) {
+      setImage([URL.createObjectURL(file),file]);
+    }
+  };
+  
 
   return (
     <>
@@ -195,38 +166,13 @@ export default function Design2({
               X
             </div>
           </div>
-          {!instaInput && !emailInput && (
-            <div className="containeroimg">
-              <button
-                type="button"
-                class="btn btn-dark"
-                onClick={() => {
-                  setarrayimgs([]);
-                  setdef([]);
-                  setShowOverlay(false);
-                }}
-              >
-                Remove all
-              </button>
-              <button
-                type="button"
-                class="btn btn-secondary"
-                onClick={() => {
-                  setlayouthero();
-                  setShowOverlay(false);
-                }}
-              >
-                Add more
-              </button>
-            </div>
-          )}
           {instaInput && (
             <div className="containeroimg">
               <input
                 placeholder={insta ? insta : "Enter your instagram link"}
                 onChange={(e) => {
                   setInsta(e.target.value);
-                  console.log(pic1);
+                  // console.log(pic1);
                 }}
               />
             </div>
@@ -256,8 +202,10 @@ export default function Design2({
 
         <div className="dbox" id="ddd">
           <div className="ibh">
-            <div className="logo" onClick={() => setlayouthero("logo")}>
-              <img src={logo ? URL.createObjectURL(logo) : img5} />
+            <div className="logo" 
+            onClick={() => addInput(setpic1Source)}
+            >
+              <img src={pic1Source[0]} alt=""/>
             </div>
 
             <div className="port">
@@ -314,7 +262,22 @@ export default function Design2({
             </div>
           </div>
 
-          <div className="ibox2" onClick={openim}>
+          <div className="ibox2" >
+          <img src={pic2Source[0]} alt="" className="im" onClick={() => addInput(setpic2Source)}/>
+          <img src={pic3Source[0]} alt="" className="im" onClick={() => addInput(setpic3Source)}/>
+          <img src={pic4Source[0]} alt="" className="im" onClick={() => addInput(setpic4Source)}/>
+          <img src={pic5Source[0]} alt="" className="im" onClick={() => addInput(setpic5Source)}/>
+          <img src={pic6Source[0]} alt="" className="im" onClick={() => addInput(setpic6Source)}/>
+          <img src={pic7Source[0]} alt="" className="im" onClick={() => addInput(setpic7Source)}/>
+          <img src={pic8Source[0]} alt="" className="im" onClick={() => addInput(setpic8Source)}/>
+          <img src={pic9Source[0]} alt="" className="im" onClick={() => addInput(setpic9Source)}/>
+          <img src={pic10Source[0]} alt="" className="im" onClick={() => addInput(setpic10Source)}/>
+          <img src={pic11Source[0]} alt="" className="im" onClick={() => addInput(setpic11Source)}/>
+          <img src={pic12Source[0]} alt="" className="im" onClick={() => addInput(setpic12Source)}/>
+          <img src={pic13Source[0]} alt="" className="im" onClick={() => addInput(setpic13Source)}/>
+          <img src={pic14Source[0]} alt="" className="im" onClick={() => addInput(setpic14Source)}/>
+          <img src={pic15Source[0]} alt="" className="im" onClick={() => addInput(setpic15Source)}/>
+          <img src={pic16Source[0]} alt="" className="im" onClick={() => addInput(setpic16Source)}/>
           </div>
         </div>
       </div>

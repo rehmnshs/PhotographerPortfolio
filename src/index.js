@@ -2,17 +2,32 @@ import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
-import img5 from ".././src/assets/img5.png";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Contactd2 from "./components/Contactd2";
 import Stories from "./meh/Stories";
-import Header from "./meh/Header";
+import pic1 from "./assets/pic1.png";
+import pic2 from "./assets/pic2.png";
+import pic3 from "./assets/pic3.png";
+import pic4 from "./assets/pic4.png";
+import pic5 from "./assets/pic5.png";
+import pic6 from "./assets/pic6.png";
+import pic7 from "./assets/pic7.png";
+import pic8 from "./assets/pic8.png";
+import pic9 from "./assets/pic9.png";
+import pic10 from "./assets/pic10.png";
+import pic11 from "./assets/pic11.png";
+import pic12 from "./assets/pic12.png";
+import pic13 from "./assets/pic13.png";
+import pic14 from "./assets/pic14.png";
+import pic15 from "./assets/pic15.png";
+import pic16 from "./assets/pic16.png";
 
 const Index = () => {
   //contents of all pages
-  const emails = "mailto:"+"rehmnshs@gmail.com";
-const [email,setEmail] = useState("");
-const [insta,setInsta] = useState("");
+  const emails = "mailto:" + "rehmnshs@gmail.com";
+  const [email, setEmail] = useState("");
+  const [insta, setInsta] = useState("");
+  const [linkedIn, setLinkedIn] = useState("");
   const [para, setpara] = useState(
     "Hi I’m Daniel Aristizábal, but call me Dani. I work as an art director " +
       "and digital artist working across the fields of arts, fashion and " +
@@ -23,24 +38,22 @@ const [insta,setInsta] = useState("");
   const [logo, setLogo] = useState();
   const [arrayimgs, setarrayimgs] = useState([]);
 
-const [pic1,setpic1] = useState();
-const [pic2,setpic2] = useState();
-const [pic3,setpic3] = useState();
-const [pic4,setpic4] = useState();
-const [pic5,setpic5] = useState();
-const [pic6,setpic6] = useState();
-const [pic7,setpic7] = useState();
-const [pic8,setpic8] = useState();
-const [pic9,setpic9] = useState();
-const [pic10,setpic10] = useState();
-const [pic11,setpic11] = useState();
-const [pic12,setpic12] = useState();
-const [pic13,setpic13] = useState();
-const [pic14,setpic14] = useState();
-const [pic15,setpic15] = useState();
-const [pic16,setpic16] = useState();
-
-
+  const [pic1Source, setpic1Source] = useState([pic1, null]);
+  const [pic2Source, setpic2Source] = useState([pic2, null]);
+  const [pic3Source, setpic3Source] = useState([pic3, null]);
+  const [pic4Source, setpic4Source] = useState([pic4, null]);
+  const [pic5Source, setpic5Source] = useState([pic5, null]);
+  const [pic6Source, setpic6Source] = useState([pic6, null]);
+  const [pic7Source, setpic7Source] = useState([pic7, null]);
+  const [pic8Source, setpic8Source] = useState([pic8, null]);
+  const [pic9Source, setpic9Source] = useState([pic9, null]);
+  const [pic10Source, setpic10Source] = useState([pic10, null]);
+  const [pic11Source, setpic11Source] = useState([pic11, null]);
+  const [pic12Source, setpic12Source] = useState([pic12, null]);
+  const [pic13Source, setpic13Source] = useState([pic13, null]);
+  const [pic14Source, setpic14Source] = useState([pic14, null]);
+  const [pic15Source, setpic15Source] = useState([pic15, null]);
+  const [pic16Source, setpic16Source] = useState([pic16, null]);
 
   //contents of all pages
   const router = createBrowserRouter([
@@ -56,52 +69,49 @@ const [pic16,setpic16] = useState();
           insta={insta}
           setEmail={setEmail}
           setInsta={setInsta}
-          pic1={pic1}
-          pic2={pic2}
-          pic3={pic3}
-          pic4={pic4}
-          pic5={pic5}
-          pic6={pic6}
-          pic7={pic7}
-          pic8={pic8}
-          pic9={pic9}
-          pic10={pic10}
-          pic11={pic11}
-          pic12={pic12}
-          pic13={pic13}
-          pic14={pic14}
-          pic15={pic15}
-          pic16={pic16}
-          setpic1={setpic1}
-          setpic2={setpic2}
-          setpic3={setpic3}
-          setpic4={setpic4}
-          setpic5={setpic5}
-          setpic6={setpic6}
-          setpic7={setpic7}
-          setpic8={setpic8}
-          setpic9={setpic9}
-          setpic10={setpic10}
-          setpic11={setpic11}
-          setpic12={setpic12}
-          setpic13={setpic13}
-         setpic14={setpic14}
-          setpic15={setpic15}
-          setpic16={setpic16}
-
-  
+          pic1Source={pic1Source}
+          pic2Source={pic2Source}
+          pic3Source={pic3Source}
+          pic4Source={pic4Source}
+          pic5Source={pic5Source}
+          pic6Source={pic6Source}
+          pic7Source={pic7Source}
+          pic8Source={pic8Source}
+          pic9Source={pic9Source}
+          pic10Source={pic10Source}
+          pic11Source={pic11Source}
+          pic12Source={pic12Source}
+          pic13Source={pic13Source}
+          pic14Source={pic14Source}
+          pic15Source={pic15Source}
+          pic16Source={pic16Source}
+          setpic1Source={setpic1Source}
+          setpic2Source={setpic2Source}
+          setpic3Source={setpic3Source}
+          setpic4Source={setpic4Source}
+          setpic5Source={setpic5Source}
+          setpic6Source={setpic6Source}
+          setpic7Source={setpic7Source}
+          setpic8Source={setpic8Source}
+          setpic9Source={setpic9Source}
+          setpic10Source={setpic10Source}
+          setpic11Source={setpic11Source}
+          setpic12Source={setpic12Source}
+          setpic13Source={setpic13Source}
+          setpic14Source={setpic14Source}
+          setpic15Source={setpic15Source}
+          setpic16Source={setpic16Source}
         />
       ),
     },
     {
       path: "/info",
-      element: <Contactd2 para={para} setpara={setpara} insta={insta} email={email} />,
+      element: (
+        <Contactd2 para={para} setpara={setpara} insta={insta} setInsta={setInsta} email={email} setEmail={setEmail} linkdin={linkedIn} setLinkedIn={setLinkedIn}/>
+      ),
     },
 
-    {
-      path: "/header",
-      element: <Header />,
-    },
+
   ]);
 
   const el = document.getElementById("root");
