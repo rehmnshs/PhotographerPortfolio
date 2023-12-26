@@ -18,7 +18,8 @@ export default function Contactd2({ para, setpara, email, insta, linkdin }) {
   }, []);
   const handleEdit = (e) => {
     setpara(e.target.value);
-
+console.log(email);
+console.log(insta);
     console.log(para);
   };
   return (

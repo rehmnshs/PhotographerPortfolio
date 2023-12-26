@@ -17,19 +17,50 @@ export default function Design2({
   setLogo,
   email,
   insta,
+  setEmail,
+  setInsta,
+  pic1,
+  pic2,
+  pic3,
+  pic4,
+  pic5,
+  pic6,
+  pic7,
+  pic8,
+  pic9,
+  pic10,
+  pic11,
+  pic12,
+  pic13,
+  pic14,
+  pic15,
+  pic16,
+  setpic1,
+  setpic2,
+  setpic3,
+  setpic4,
+  setpic5,
+  setpic6,
+  setpic7,
+  setpic8,
+  setpic9,
+  setpic10,
+  setpic11,
+  setpic12,
+  setpic13,
+  setpic14,
+  setpic15,
+  setpic16,
 }) {
-  const [defaultImages,setdef] = useState([img1, img, img7]);
+  const [defaultImages, setdef] = useState([img1, img, img7]);
   const [showOverlay, setShowOverlay] = useState(false);
   const navigate = useNavigate();
   const [nestpage, setpt] = useState(false);
-
+  const [instaInput, setInstaInput] = useState(false);
+  const [emailInput, setEmailInput] = useState(false);
   //CONTENTS
 
   //CONTENTS
-
-  //Host it! sending data to server
-
-  //end of Host it!
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -57,6 +88,8 @@ export default function Design2({
   }
   const handlePopupClose = () => {
     setShowOverlay(false);
+    setInstaInput(false);
+    setEmailInput(false);
   };
   const lenis = new Lenis();
 
@@ -90,12 +123,38 @@ export default function Design2({
   }
 
   const newImages = [];
+  let k = "setpic";
   function handleFileUpload(input) {
-    for (let i = 0; i < input.files.length; i++) {
+    if (!pic1) {
+      const img = document.createElement("img");
+
+      setpic1(input.files[0]);
+      img.className= "im";
+      img.src =URL.createObjectURL(pic1);
+      const main = document.querySelector(".ibox2");
+     return main.appendChild(img);
+    }
+    if (!pic2) {
+      const img = document.createElement("img");
+
+      setpic2(input.files[0]);
+      img.className = "im";
+      img.src =URL.createObjectURL(pic2);
+      const main = document.querySelector(".ibox2");
+      return main.appendChild(img);
+    }
+    if (!pic3) {
+      setpic3(input.files[0]);
+      console.log(pic3);
+    }
+
+    /*  for (let i = 0; i < input.files.length; i++) {
+      
       newImages.push(input.files[i]);
     }
 
     setarrayimgs((prevImages) => [...prevImages, ...newImages]);
+  }*/
   }
   function handleLogoUpload(input) {
     return setLogo(input.files[0]);
@@ -136,29 +195,52 @@ export default function Design2({
               X
             </div>
           </div>
-          <div className="containeroimg">
-            <button
-              type="button"
-              class="btn btn-dark"
-              onClick={() => {
-                setarrayimgs([]);
-                setdef([])
-                setShowOverlay(false);
-              }}
-            >
-              Remove all
-            </button>
-            <button
-              type="button"
-              class="btn btn-secondary"
-              onClick={() => {
-                setlayouthero();
-                setShowOverlay(false);
-              }}
-            >
-              Add more
-            </button>
-          </div>
+          {!instaInput && !emailInput && (
+            <div className="containeroimg">
+              <button
+                type="button"
+                class="btn btn-dark"
+                onClick={() => {
+                  setarrayimgs([]);
+                  setdef([]);
+                  setShowOverlay(false);
+                }}
+              >
+                Remove all
+              </button>
+              <button
+                type="button"
+                class="btn btn-secondary"
+                onClick={() => {
+                  setlayouthero();
+                  setShowOverlay(false);
+                }}
+              >
+                Add more
+              </button>
+            </div>
+          )}
+          {instaInput && (
+            <div className="containeroimg">
+              <input
+                placeholder={insta ? insta : "Enter your instagram link"}
+                onChange={(e) => {
+                  setInsta(e.target.value);
+                  console.log(pic1);
+                }}
+              />
+            </div>
+          )}
+          {emailInput && (
+            <div className="containeroimg">
+              <input
+                placeholder={email ? email : "Enter your email id"}
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                }}
+              />
+            </div>
+          )}
         </div>
       )}
       <div>
@@ -191,7 +273,10 @@ export default function Design2({
             <div style={{ display: "flex", gap: "20px", marginTop: "25px" }}>
               <div>
                 <a
-                  href={insta}
+                  onClick={() => {
+                    setShowOverlay(true);
+                    setInstaInput(true);
+                  }}
                   style={{ textDecoration: "none", color: "black" }}
                 >
                   <svg
@@ -208,7 +293,10 @@ export default function Design2({
               </div>
               <div>
                 <a
-                  href={email}
+                  onClick={() => {
+                    setShowOverlay(true);
+                    setEmailInput(true);
+                  }}
                   style={{ textDecoration: "none", color: "black" }}
                 >
                   <svg
@@ -227,22 +315,6 @@ export default function Design2({
           </div>
 
           <div className="ibox2" onClick={openim}>
-            {arrayimgs[0]
-              ? arrayimgs.map((imgSrc, index) => (
-                  <img
-                    key={`img_${index}`}
-                    className="im"
-                    src={URL.createObjectURL(imgSrc)}
-                  />
-                ))
-              : defaultImages.map((imgSrc, index) => (
-                  <img
-                    key={`default_img_${index}`}
-                    className="im"
-                    src={imgSrc}
-                    alt={`Default Image ${index}`}
-                  />
-                ))}
           </div>
         </div>
       </div>
