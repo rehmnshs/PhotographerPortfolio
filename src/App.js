@@ -46,6 +46,7 @@ function App({
   setpic14Source,
   setpic15Source,
   setpic16Source,
+  host
 }) {
   return (
     <>
@@ -92,6 +93,7 @@ function App({
           setpic14Source={setpic14Source}
           setpic15Source={setpic15Source}
           setpic16Source={setpic16Source}
+          host={host}
       />
     </>
   );

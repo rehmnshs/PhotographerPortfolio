@@ -23,10 +23,7 @@ import { ScrollTrigger } from "gsap/all";
 import axios from "axios";
 
 export default function Design2({
-  arrayimgs,
-  setarrayimgs,
-  logo,
-  setLogo,
+  host,
   email,
   insta,
   setEmail,
@@ -197,7 +194,7 @@ export default function Design2({
           {HostInput && (
             <div className="containerohost">
              <p className="hostText"> This action is irreversible. Are you sure you want to proceed with hosting it? </p>
-            <div className="bts"> <div className="bt1" onClick={handlePopupClose}>No</div><div className="bt1">Yes</div> </div>
+            <div className="bts"> <div className="bt1" onClick={handlePopupClose}>No</div><div className="bt1" onClick={host}>Yes</div> </div>
             </div>
             
           )}

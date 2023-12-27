@@ -55,7 +55,38 @@ const Index = () => {
   const [pic14Source, setpic14Source] = useState([pic14, null]);
   const [pic15Source, setpic15Source] = useState([pic15, null]);
   const [pic16Source, setpic16Source] = useState([pic16, null]);
-
+  function host() {
+    
+    const formData = new FormData();
+    formData.append("variant", "Photography-Portfolio-2")
+    formData.append("emailAddress", email);
+    formData.append("navName", username);
+    formData.append("file", pic1Source[1]); // Assuming pic1Source is an array [URL, File]
+    formData.append("file", pic2Source[1]);
+    formData.append("file", pic3Source[1]);
+    formData.append("file", pic4Source[1]);
+    formData.append("file", pic5Source[1]);
+    formData.append("file", pic6Source[1]);
+    formData.append("file", pic7Source[1]);
+    formData.append("file", pic8Source[1]);
+    formData.append("file", pic9Source[1]);
+    formData.append("file", pic10Source[1]);
+    formData.append("file", pic11Source[1]);
+    formData.append("file", pic12Source[1]);
+    formData.append("file", pic13Source[1]);
+    formData.append("file", pic14Source[1]);
+    formData.append("file", pic15Source[1]);
+    formData.append("file", pic16Source[1]);
+    formData.append("para", para);
+    formData.append("linkedInLink", linkedIn);
+    formData.append("instagramLink", insta);
+    fetch("http://localhost:3001/upload", {
+      method: "POST",
+      body: formData,
+    })
+      
+      .catch((error) => console.error("Error:", error));
+  }
   //contents of all pages
   const router = createBrowserRouter([
     {
@@ -104,6 +135,7 @@ const Index = () => {
           setpic14Source={setpic14Source}
           setpic15Source={setpic15Source}
           setpic16Source={setpic16Source}
+          host={host}
         />
       ),
     },
