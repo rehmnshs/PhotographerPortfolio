@@ -12,6 +12,8 @@ function App({
   insta,
   setEmail,
   setInsta,
+  username,
+  setusername,
   pic1Source,
   pic2Source,
   pic3Source,
@@ -56,6 +58,8 @@ function App({
         insta={insta}
         setInsta={setInsta}
         setEmail={setEmail}
+        username = {username}
+        setusername = {setusername}
         pic1Source={pic1Source}
           pic2Source={pic2Source}
           pic3Source={pic3Source}

@@ -28,6 +28,7 @@ const Index = () => {
   const [email, setEmail] = useState("");
   const [insta, setInsta] = useState("");
   const [linkedIn, setLinkedIn] = useState("");
+  const  [username,setusername ]= useState("");
   const [para, setpara] = useState(
     "Hi I’m Daniel Aristizábal, but call me Dani. I work as an art director " +
       "and digital artist working across the fields of arts, fashion and " +
@@ -69,6 +70,8 @@ const Index = () => {
           insta={insta}
           setEmail={setEmail}
           setInsta={setInsta}
+          username={username}
+          setusername = {setusername}
           pic1Source={pic1Source}
           pic2Source={pic2Source}
           pic3Source={pic3Source}

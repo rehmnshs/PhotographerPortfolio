@@ -31,6 +31,8 @@ export default function Design2({
   insta,
   setEmail,
   setInsta,
+  username,
+  setusername,
   pic1Source,
   pic2Source,
   pic3Source,
@@ -70,6 +72,7 @@ export default function Design2({
   const [nestpage, setpt] = useState(false);
   const [instaInput, setInstaInput] = useState(false);
   const [emailInput, setEmailInput] = useState(false);
+  const [HostInput, setHostInput] =useState(false);
   //CONTENTS
 
   //CONTENTS
@@ -94,11 +97,15 @@ export default function Design2({
       );
     });
   }, []);
+  const handleEdit1 = (e) => {
+    setusername(e.target.value);
 
+  };
   const handlePopupClose = () => {
     setShowOverlay(false);
     setInstaInput(false);
     setEmailInput(false);
+    setHostInput(false);
   };
   const lenis = new Lenis();
 
@@ -187,6 +194,13 @@ export default function Design2({
               />
             </div>
           )}
+          {HostInput && (
+            <div className="containerohost">
+             <p className="hostText"> This action is irreversible. Are you sure you want to proceed with hosting it? </p>
+            <div className="bts"> <div className="bt1" onClick={handlePopupClose}>No</div><div className="bt1">Yes</div> </div>
+            </div>
+            
+          )}
         </div>
       )}
       <div>
@@ -208,6 +222,10 @@ export default function Design2({
               <img src={pic1Source[0]} alt=""/>
             </div>
 
+            <div className="usernameContainer">
+             <textarea className="username" onChange={handleEdit1}>{username ? username : "Username"}</textarea> <div className="underline"></div>
+            </div>
+
             <div className="port">
               Portfolio <div className="underline"></div>
             </div>
@@ -215,8 +233,8 @@ export default function Design2({
             <div className="con" onClick={confunc}>
               Contact<div className="underline"></div>
             </div>
-            <div className="con">
-              Host it!<div className="underline"></div>
+            <div className="con" onClick={()=>{setShowOverlay(true); setHostInput(true)}}>
+              Host it!<div className="underline" ></div>
             </div>
             <div style={{ display: "flex", gap: "20px", marginTop: "25px" }}>
               <div>
