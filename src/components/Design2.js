@@ -160,6 +160,7 @@ export default function Design2({
               <div>
                 <a
                   href={insta}
+                  target="_blank" rel="noopener noreferrer"
                   style={{ textDecoration: "none", color: "black" }}
                 >
                   <svg
@@ -177,6 +178,7 @@ export default function Design2({
               <div>
                 <a
                   href={email}
+                  target="_blank" rel="noopener noreferrer"
                   style={{ textDecoration: "none", color: "black" }}
                 >
                   <svg
