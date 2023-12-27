@@ -49,7 +49,7 @@ export default function Design2({
   const [showOverlay, setShowOverlay] = useState(false);
   const navigate = useNavigate();
   const [nestpage, setpt] = useState(false);
-  const [curImage , setCurImage] = useState(null);
+  const [curImage, setCurImage] = useState(null);
   //CONTENTS
 
   //CONTENTS
@@ -109,9 +109,6 @@ export default function Design2({
     }, 1100);
   }
 
-
-  
-
   return (
     <>
       {" "}
@@ -127,7 +124,6 @@ export default function Design2({
             <div className="curtain"></div>
             <img className="imgg" src={curImage} />
           </div>
-        
         </div>
       )}
       <div>
@@ -143,24 +139,27 @@ export default function Design2({
 
         <div className="dbox" id="ddd">
           <div className="ibh">
-            <div className="logo" 
-            
-            >
-              <img src={pic1Source} alt=""/>
+            <div className="logo">
+              <img src={pic1Source} alt="" />
             </div>
 
-            <div className="port">
-              Portfolio <div className="underline"></div>
+            <div
+              className="port"
+              onClick={() => {
+
+              }}
+            >
+              Portfolio 
             </div>
 
             <div className="con" onClick={confunc}>
               Contact<div className="underline"></div>
             </div>
-            
+
             <div style={{ display: "flex", gap: "20px", marginTop: "25px" }}>
               <div>
                 <a
-                 href={insta}
+                  href={insta}
                   style={{ textDecoration: "none", color: "black" }}
                 >
                   <svg
@@ -177,7 +176,7 @@ export default function Design2({
               </div>
               <div>
                 <a
-                 href={email}
+                  href={email}
                   style={{ textDecoration: "none", color: "black" }}
                 >
                   <svg
@@ -195,37 +194,142 @@ export default function Design2({
             </div>
           </div>
 
-          <div className="ibox2" >
-          <img src={pic2Source} alt="" className="im" onClick={() => { setShowOverlay(true)
-          setCurImage(pic2Source) } }/>
-          <img src={pic3Source} alt="" className="im" onClick={() => { setShowOverlay(true)
-          setCurImage(pic3Source) } }/>
-          <img src={pic4Source} alt="" className="im" onClick={() => { setShowOverlay(true)
-          setCurImage(pic4Source) } }/>
-          <img src={pic5Source} alt="" className="im" onClick={() => { setShowOverlay(true)
-          setCurImage(pic5Source) } }/>
-          <img src={pic6Source} alt="" className="im" onClick={() => { setShowOverlay(true)
-          setCurImage(pic6Source) } }/>
-          <img src={pic7Source} alt="" className="im" onClick={() => { setShowOverlay(true)
-          setCurImage(pic7Source) } }/>
-          <img src={pic8Source} alt="" className="im" onClick={() => { setShowOverlay(true)
-          setCurImage(pic8Source) } }/>
-          <img src={pic9Source} alt="" className="im" onClick={() => { setShowOverlay(true)
-          setCurImage(pic9Source) } }/>
-          <img src={pic10Source} alt="" className="im" onClick={() => { setShowOverlay(true)
-          setCurImage(pic10Source) } }/>
-          <img src={pic11Source} alt="" className="im" onClick={() => { setShowOverlay(true)
-          setCurImage(pic11Source) } }/>
-          <img src={pic12Source} alt="" className="im" onClick={() => { setShowOverlay(true)
-          setCurImage(pic12Source) } }/>
-          <img src={pic13Source} alt="" className="im" onClick={() => { setShowOverlay(true)
-          setCurImage(pic13Source) } }/>
-          <img src={pic14Source} alt="" className="im" onClick={() => { setShowOverlay(true)
-          setCurImage(pic14Source) } }/>
-          <img src={pic15Source} alt="" className="im" onClick={() => { setShowOverlay(true)
-          setCurImage(pic15Source) } }/>
-          <img src={pic16Source} alt="" className="im" onClick={() => { setShowOverlay(true)
-          setCurImage(pic16Source) } }/>
+          <div className="ibox2">
+            <img
+              src={pic2Source}
+              alt=""
+              className="im"
+              onClick={() => {
+                setShowOverlay(true);
+                setCurImage(pic2Source);
+              }}
+            />
+            <img
+              src={pic3Source}
+              alt=""
+              className="im"
+              onClick={() => {
+                setShowOverlay(true);
+                setCurImage(pic3Source);
+              }}
+            />
+            <img
+              src={pic4Source}
+              alt=""
+              className="im"
+              onClick={() => {
+                setShowOverlay(true);
+                setCurImage(pic4Source);
+              }}
+            />
+            <img
+              src={pic5Source}
+              alt=""
+              className="im"
+              onClick={() => {
+                setShowOverlay(true);
+                setCurImage(pic5Source);
+              }}
+            />
+            <img
+              src={pic6Source}
+              alt=""
+              className="im"
+              onClick={() => {
+                setShowOverlay(true);
+                setCurImage(pic6Source);
+              }}
+            />
+            <img
+              src={pic7Source}
+              alt=""
+              className="im"
+              onClick={() => {
+                setShowOverlay(true);
+                setCurImage(pic7Source);
+              }}
+            />
+            <img
+              src={pic8Source}
+              alt=""
+              className="im"
+              onClick={() => {
+                setShowOverlay(true);
+                setCurImage(pic8Source);
+              }}
+            />
+            <img
+              src={pic9Source}
+              alt=""
+              className="im"
+              onClick={() => {
+                setShowOverlay(true);
+                setCurImage(pic9Source);
+              }}
+            />
+            <img
+              src={pic10Source}
+              alt=""
+              className="im"
+              onClick={() => {
+                setShowOverlay(true);
+                setCurImage(pic10Source);
+              }}
+            />
+            <img
+              src={pic11Source}
+              alt=""
+              className="im"
+              onClick={() => {
+                setShowOverlay(true);
+                setCurImage(pic11Source);
+              }}
+            />
+            <img
+              src={pic12Source}
+              alt=""
+              className="im"
+              onClick={() => {
+                setShowOverlay(true);
+                setCurImage(pic12Source);
+              }}
+            />
+            <img
+              src={pic13Source}
+              alt=""
+              className="im"
+              onClick={() => {
+                setShowOverlay(true);
+                setCurImage(pic13Source);
+              }}
+            />
+            <img
+              src={pic14Source}
+              alt=""
+              className="im"
+              onClick={() => {
+                setShowOverlay(true);
+                setCurImage(pic14Source);
+              }}
+            />
+            <img
+              src={pic15Source}
+              alt=""
+              className="im"
+              onClick={() => {
+                setShowOverlay(true);
+                setCurImage(pic15Source);
+              }}
+            />
+            <img
+              src={pic16Source}
+              alt=""
+              className="im"
+              onClick={() => {
+                setShowOverlay(true);
+                setCurImage(pic16Source);
+              }}
+            />
           </div>
         </div>
       </div>
