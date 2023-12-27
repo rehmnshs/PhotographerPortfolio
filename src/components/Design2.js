@@ -224,7 +224,7 @@ export default function Design2({
             </div>
 
             <div className="port">
-              Portfolio <div className="underline"></div>
+              Portfolio
             </div>
 
             <div className="con" onClick={confunc}>
