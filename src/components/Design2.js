@@ -20,7 +20,6 @@ import Lenis from "@studio-freight/lenis";
 import { gsap } from "gsap";
 import { useNavigate } from "react-router-dom";
 import { ScrollTrigger } from "gsap/all";
-import axios from "axios";
 
 export default function Design2({
   arrayimgs,
