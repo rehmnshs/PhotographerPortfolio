@@ -122,7 +122,7 @@ export default function Design2({
           </div>
           <div className="containeroimg">
             <div className="curtain"></div>
-            <img className="imgg" src={curImage} />
+            <img className="imgg" id="imgid" src={curImage} />
           </div>
         </div>
       )}

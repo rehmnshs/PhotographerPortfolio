@@ -259,13 +259,7 @@ position: relative;
 height: 90%;
 gap: 50px;
 }
-.imgg{
-  
-  height: 100%;
-  width: auto;
-position: relative;
-transition: all 0.5s;
-}
+
 .curtain{
 opacity: 0;
   position: absolute;
@@ -275,23 +269,43 @@ opacity: 0;
   background-color: white;
   height: 100%;
   width: 100%;
-  transition: opacity 0.5s;
-  animation: curtain 1.5s  0.5s both ;
+  animation: curtain 1.5s  1s both ;
 }
-.curtain{
-  opacity: 1;
+#imgid{
+  opacity: 0;
+  height: 100%;
+  width: auto;
+position: relative;
+animation: op1 1.5s  1s both ;
 }
+@keyframes op1 {
+  0%{
+    opacity: 0;
+   
+  }
+  100%{
+    opacity: 1;
 
+
+  }
+}
 
 @keyframes curtain {
   0%{
-   
+    opacity: 1;
+    background: transparent;
     height: 100vh;
 
   }
+  0.5%{
+    opacity: 1;
+    background: white;
+
+  }
   100%{
+    opacity: 1;
+    background: white;
     height: 0vh;
-    
 
   }
 }
