@@ -4,6 +4,7 @@ import "./App.css";
 import Design2 from "./components/Design2";
 
 function App({
+  setuid,
   arrayimgs,
   setarrayimgs,
   logo,
@@ -51,6 +52,7 @@ function App({
   return (
     <>
       <Design2
+      setuid ={setuid}
         setarrayimgs={setarrayimgs}
         arrayimgs={arrayimgs}
         logo={logo}

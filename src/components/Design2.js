@@ -62,6 +62,7 @@ export default function Design2({
   setpic14Source,
   setpic15Source,
   setpic16Source,
+  setuid
 }) {
   // const [defaultImages, setdef] = useState([img1, img, img7]);
   const [showOverlay, setShowOverlay] = useState(false);
@@ -74,7 +75,14 @@ export default function Design2({
 
   //CONTENTS
 
-  useEffect(() => {
+  useEffect(() => { 
+    const currentUrl = window.location.href;
+    const urlSearchParams = new URLSearchParams(window.location.search);
+    const id = urlSearchParams.get('id');
+   setuid(id);
+
+
+
     gsap.registerPlugin(ScrollTrigger);
     const images = document.querySelectorAll(".im");
 
@@ -219,10 +227,7 @@ export default function Design2({
               <img src={pic1Source[0]} alt=""/>
             </div>
 
-            <div className="usernameContainer">
-             <textarea className="username" onChange={handleEdit1}>{username ? username : "Username"}</textarea> <div className="underline"></div>
-            </div>
-
+   
             <div className="port">
               Portfolio
             </div>

@@ -25,10 +25,11 @@ import pic16 from "./assets/pic16.png";
 const Index = () => {
   //contents of all pages
   const emails = "mailto:" + "rehmnshs@gmail.com";
+  const [uid, setuid] = useState("");
   const [email, setEmail] = useState("");
   const [insta, setInsta] = useState("");
   const [linkedIn, setLinkedIn] = useState("");
-  const  [username,setusername ]= useState("");
+  const [username, setusername] = useState("");
   const [para, setpara] = useState(
     "Hi I’m Daniel Aristizábal, but call me Dani. I work as an art director " +
       "and digital artist working across the fields of arts, fashion and " +
@@ -56,10 +57,10 @@ const Index = () => {
   const [pic15Source, setpic15Source] = useState([pic15, null]);
   const [pic16Source, setpic16Source] = useState([pic16, null]);
   function host() {
-    
     const formData = new FormData();
-    formData.append("variant", "Photography-Portfolio-2")
+    formData.append("variant", "Photography-Portfolio-2");
     formData.append("emailAddress", email);
+    formData.append("userID", uid);
     formData.append("navName", username);
     formData.append("file", pic1Source[1]); // Assuming pic1Source is an array [URL, File]
     formData.append("file", pic2Source[1]);
@@ -83,9 +84,7 @@ const Index = () => {
     fetch("http://localhost:3001/upload", {
       method: "POST",
       body: formData,
-    })
-      
-      .catch((error) => console.error("Error:", error));
+    }).catch((error) => console.error("Error:", error));
   }
   //contents of all pages
   const router = createBrowserRouter([
@@ -93,6 +92,7 @@ const Index = () => {
       path: "/",
       element: (
         <App
+          setuid={setuid}
           arrayimgs={arrayimgs}
           setarrayimgs={setarrayimgs}
           logo={logo}
@@ -102,7 +102,7 @@ const Index = () => {
           setEmail={setEmail}
           setInsta={setInsta}
           username={username}
-          setusername = {setusername}
+          setusername={setusername}
           pic1Source={pic1Source}
           pic2Source={pic2Source}
           pic3Source={pic3Source}
@@ -142,11 +142,19 @@ const Index = () => {
     {
       path: "/info",
       element: (
-        <Contactd2 para={para} setpara={setpara} insta={insta} setInsta={setInsta} email={email} setEmail={setEmail} linkdin={linkedIn} setLinkedIn={setLinkedIn}/>
+        <Contactd2
+          para={para}
+          setpara={setpara}
+          insta={insta}
+          setInsta={setInsta}
+          email={email}
+          setEmail={setEmail}
+          linkdin={linkedIn}
+          setLinkedIn={setLinkedIn}
+          uid={uid}
+        />
       ),
     },
-
-
   ]);
 
   const el = document.getElementById("root");
